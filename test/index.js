@@ -8,7 +8,7 @@ describe('emojafy', () => {
   });
 
   it('should return string', () => {
-    const text = 'hoge';
-    assert(emojafy(text) === 'hoge');
+    const text = 'sushiおすしsushiすし';
+    assert(emojafy(text) === 'sushi🍣sushi🍣');
   });
 });
