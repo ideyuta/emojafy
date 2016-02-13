@@ -1,3 +1,7 @@
+/* eslint-disable new-cap */
+import VerEx from 'verbal-expressions';
+import emoja from './emoja';
+
 /**
  * emojafy
  *
@@ -5,5 +9,14 @@
  * @return {string}
  */
 export default function emojafy(text) {
-  return text;
+  let result = text;
+  Object.keys(emoja).forEach(emoji => {
+    const ja = emoja[emoji];
+    let i = 0;
+    while (i < ja.length) {
+      result = VerEx().find(ja[i]).replace(result, emoji);
+      i++;
+    }
+  });
+  return result;
 }
