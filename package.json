@@ -34,5 +34,8 @@
   "scripts": {
     "build": "mkdir -p lib/ && babel index.js -o lib/index.js",
     "test": "mocha test/index.js --compilers js:babel-register"
+  },
+  "dependencies": {
+    "verbal-expressions": "^0.2.1"
   }
 }
