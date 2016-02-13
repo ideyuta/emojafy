@@ -30,6 +30,6 @@
     "url": "https://github.com/ideyuta/emojafy.git"
   },
   "scripts": {
-    "build": "mkdir -p lib/ && babel index.js --presets es2015 -o lib/index.js"
+    "build": "mkdir -p lib/ && babel index.js -o lib/index.js"
   }
 }
