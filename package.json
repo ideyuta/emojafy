@@ -36,6 +36,7 @@
   },
   "scripts": {
     "build": "mkdir -p lib/ && babel src --out-dir lib",
+    "deploy": "cd site && npm install && npm run deploy",
     "test": "mocha test/index.js --compilers js:babel-register"
   }
 }

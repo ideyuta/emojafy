@@ -35,7 +35,7 @@
     "build:css": "stylus -c src/styles/base.styl --include-css -I node_modules -o dist/bundle.css",
     "build:js": "browserify -t [ babelify --presets [ es2015 react ] ] src/index.js -o dist/bundle.js",
     "copy:html": "cp src/index.html dist/index.html",
-    "deploy": "gh-pages -d dist",
+    "deploy": "npm run build && gh-pages -d dist",
     "start": "npm-run-all --parallel watch:*",
     "watch:css": "chokidar src/styles/ -c 'npm run build:css'",
     "watch:js": "chokidar src/ -c 'npm run build:js'"

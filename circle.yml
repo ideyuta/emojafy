@@ -12,7 +12,4 @@ deployment:
       - git config --global user.email "ide.yuta@gmail.com"
       - git config --global user.name "Yuta Ide"
       - npm run build
-      - cd site
-      - npm install
-      - npm run build
       - npm run deploy
