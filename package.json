@@ -32,7 +32,7 @@
     "url": "https://github.com/ideyuta/emojafy.git"
   },
   "scripts": {
-    "build": "mkdir -p lib/ && babel index.js -o lib/index.js",
+    "build": "mkdir -p lib/ && babel src --out-dir lib",
     "test": "mocha test/index.js --compilers js:babel-register"
   },
   "dependencies": {
