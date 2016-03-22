@@ -19497,8 +19497,18 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+/**
+ * App
+ */
+
 var App = function (_React$Component) {
   _inherits(App, _React$Component);
+
+  /**
+   * constructor
+   *
+   * @param {Object} props - props
+   */
 
   function App(props) {
     _classCallCheck(this, App);
@@ -19508,6 +19518,13 @@ var App = function (_React$Component) {
     _this.state = { text: '' };
     return _this;
   }
+
+  /**
+   * render
+   *
+   * @return {ReactElement}
+   */
+
 
   _createClass(App, [{
     key: 'render',
