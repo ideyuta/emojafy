@@ -209,6 +209,24 @@ var emoja = {
   '🍆': ['ナス', '茄子'],
   '🌽': ['トウモロコシ', 'とうもろこし', 'モロコシ', 'コーン'],
   '🍄': ['きのこ', 'キノコ', '茸', 'マッシュルーム', 'マッシュ'],
+  '🌰': ['くり', '栗'],
+  '🍞': ['食パン', 'パン', 'ブレッド'],
+  '🍖': ['骨つき肉', 'にく', '肉', 'ミート'],
+  '🍗': ['フライドチキン', 'ケンタッキー'],
+  '🍔': ['ハンバーガー', 'バーガー'],
+  '🍟': ['フライドポテト'],
+  '🍕': ['ピザ', 'ピッツァ'],
+  '🍳': ['目玉焼き', 'フライドエッグ'],
+  '🍲': ['なべ', 'ナベ', '鍋'],
+  '🍱': ['お弁当', '弁当'],
+  '🍘': ['おせんべい', 'せんべい', '煎餅'],
+  '🍙': ['おにぎり', 'おむすび', '握り飯'],
+  '🍚': ['ごはん', '御飯', 'ご飯', 'ライス'],
+  '🍛': ['カレーライス', 'カレー'],
+  '🍜': ['ラーメン', 'らーめん', '拉麺'],
+  '🍝': ['パスタ', 'スパゲティ', 'スパゲッティ'],
+  '🍠': ['焼き芋', '焼きいも', 'やきいも'],
+  '🍢': ['おでん', '田楽'],
   '🍣': ['おすし', 'お寿司', 'おスシ', 'お寿し', 'お鮨', 'すし', 'スシ', '寿司', '寿し', '鮨']
 };
 
@@ -10218,6 +10236,10 @@ var ReactEmptyComponentInjection = {
   }
 };
 
+function registerNullComponentID() {
+  ReactEmptyComponentRegistry.registerNullComponentID(this._rootNodeID);
+}
+
 var ReactEmptyComponent = function (instantiate) {
   this._currentElement = null;
   this._rootNodeID = null;
@@ -10226,7 +10248,7 @@ var ReactEmptyComponent = function (instantiate) {
 assign(ReactEmptyComponent.prototype, {
   construct: function (element) {},
   mountComponent: function (rootID, transaction, context) {
-    ReactEmptyComponentRegistry.registerNullComponentID(rootID);
+    transaction.getReactMountReady().enqueue(registerNullComponentID, this);
     this._rootNodeID = rootID;
     return ReactReconciler.mountComponent(this._renderedComponent, rootID, transaction, context);
   },
@@ -14506,7 +14528,7 @@ module.exports = ReactUpdates;
 
 'use strict';
 
-module.exports = '0.14.7';
+module.exports = '0.14.8';
 },{}],90:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
